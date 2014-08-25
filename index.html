@@ -1,23 +1,70 @@
 <!DOCTYPE html>
 <head>
  <link href="style.css" rel="stylesheet">
- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+ <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+ <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script>
 
- </script>
+$(document).ready(function() {
+  var $slider = $('.slider'); // class for the "Carousel" (Q: why class over div?)
+  var $slide = 'li'; // used li to list imagies (ul is "inline" vs block)
+  var $transition_time = 1000; // 1 second
+  var $time_between_slides = 4000; // 4 seconds
+
+  function slides(){
+    return $slider.find($slide);
+  }
+
+  slides().fadeOut();
+
+  // set active classes
+  slides().first().addClass('active');
+  slides().first().fadeIn($transition_time);
+
+  // auto "slide" (hardest part is image sizing and related edits)
+  $interval = setInterval(
+    function(){
+      var $i = $slider.find($slide + '.active').index();
+
+      slides().eq($i).removeClass('active');
+      slides().eq($i).fadeOut($transition_time);
+
+      if (slides().length == $i + 1) $i = -1; // loop to start
+
+      slides().eq($i + 1).fadeIn($transition_time);
+      slides().eq($i + 1).addClass('active');
+    }
+    , $transition_time +  $time_between_slides 
+  );
+});
+
+</script>
 
   <title>About Matt M.</title>
+  
   <h1>Matthew Moughan</h1>
+  
+  <div class="mayhem">
+    <figure>
+    <img src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/392120_831746551284_231728048_n.jpg?oh=3810c6b24d436d9324b4f191571cd165&oe=545EB8A2&__gda__=1417708249_8ae4f2ed3b2ab5f0b301ed7d60f7a6c0">
+      <figcaupture>I'm a hot babe out jogging...</figurecapture>  
+    </figure>
+  </div>
+
+<div class="mari">
+  <figure>
+  <figcaption>Mari and I</figcaption>
+  <img src="https://scontent-a-pao.xx.fbcdn.net/hphotos-xaf1/t1.0-9/299626_300644716616156_173080596_n.jpg">
+  </figure>
+</div>
+
 </head>
 
 <body>
   <img src="https://media.licdn.com/media/p/7/005/056/3a2/0f2c0df.jpg">
   
-  <div class="mayhem">
-    <img src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/392120_831746551284_231728048_n.jpg?oh=3810c6b24d436d9324b4f191571cd165&oe=545EB8A2&__gda__=1417708249_8ae4f2ed3b2ab5f0b301ed7d60f7a6c0">
-      <p>I'm a hot babe out jogging...</p>  
-  </div>
-
-  <h3> 56 Glover St. | San Francisco, CA 94109 | p: 847-308-4097 | <br>
+  <h3> 56 Glover St. | San Francisco, CA 94109 | p: 847-308-4097  <br>
     e: <a href="mailto:MPMoughan@gmail.com">MPMoughan@gmail.com</a></h3>
 
 <div>
@@ -33,16 +80,12 @@
 </div>
 
 <div>
-<p>I'm a big sports fan, especially basketball (Bulls, Marquette, USA Basketball)! An aspiring photographer <a href="http://instagram.com/MatthewP_M">INSTAGRAM</a>, traveller, British Accent Connoisseur, and natrually curious person! I cannot wait to continue learning about web development and technologies!</p> 
+  <p>I'm a big sports fan, especially basketball (Bulls, Marquette, USA Basketball)! An aspiring photographer <a href="http://instagram.com/MatthewP_M">INSTAGRAM</a>, traveller, British Accent Connoisseur, and natrually curious person! I cannot wait to continue learning about web development and technologies!</p> 
 </div>
 
   <h3>Cheers, Matt</h3> 
 
-<div class="mari">
-  <img src="https://scontent-a-pao.xx.fbcdn.net/hphotos-xaf1/t1.0-9/299626_300644716616156_173080596_n.jpg">
-</div>
-
-<ul div="slider">
+<ul class="slider">
   <li><img src="http://www.nba.com/cavaliers/sites/cavaliers/files/imagecache/slider_image/usa_basketball_120521_670.jpg"></li>
   <li><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQXIRtyMAUvfO2FAhOHTNC2W8rD7NwEL_JaRa0YsPMuXtLIPSoafg"></li>
   <li><img src="http://www.aviewoncities.com/img/chicago/kveus9752s.jpg"></li>

@@ -1,22 +1,58 @@
 
+    .mayhem {
+        max-height: 50%;
+        max-width: 50%;
+        border-radius: 60px 60px 10px 10px;
+        position: relative;
+        top: -120px;
+        left: 600px;
+        z-index: -1;
+        transform:scale(0.40);
+        -moz-transform:scale(0.40);
+        -webkit-transform:scale(0.40); 
+        font-size: 40px;
+        text-align: left;  
+      }
+    .mari {
+        max-height: 50%;
+        max-width: 50%;
+        border-radius: 60px 60px 10px 10px;
+        position: relative;
+        top: 950px;
+        left: -450px;
+        z-index: -1;
+        transform:scale(0.60);
+        -moz-transform:scale(0.60);
+        -webkit-transform:scale(0.60); 
+        font-size: 28px;  
+      }
+    
+    h1 {
+        font-family: 'Bree Serif', serif;
+        font-size: 40px;
+      }
+
     body {
       background: #232323;
-      /*background: url("http://www.nba.com/cavaliers/sites/cavaliers/files/imagecache/slider_image/usa_basketball_120521_670.jpg");*/
       background-size: cover;
       color: white;
-      font-family: calibri;
+      font-family: 'Josefin Sans', sans-serif;
       max-width: 600px;
       margin: 0 auto;
       text-align: center;
     
     }
-   div {
+    img {
+      border: 10px white solid;
+      padding: 0;
+    }
+    div {
       height: 100px;
       position: relative;
       margin: 40px 0 0 0;
       border-radius: 12px;
       max-width: 600px;
-  }
+    }
     p {
       padding: 0px;
       line-height: 20px;
@@ -25,36 +61,17 @@
       margin: 10px;
       height: 20px;   
     }
-    img {
-      border: 10px white solid;
-      margin-top: 50px;
-      padding: 0;
+
+    .slider {
+      margin: 10px 0;
+      width: 280px; /* Update to your slider width */
+      height: 100px; /* Update to your slider height */
+      position: relative;
+      overflow: visible;        
+      /*top: 350px;
+      left: 250px;*/
+      z-index: -1;
     }
-    .mayhem {
-        max-height: 50%;
-        max-width: 50%;
-        border-radius: 60px 60px 10px 10px;
-        border-bottom: 40px solid #666;
-        position: relative;
-        top: -550px;
-        left: 600px;
-        z-index: -1;
-        transform:scale(0.40);
-        -moz-transform:scale(0.40);
-        -webkit-transform:scale(0.40); 
-        font-size: 28px;  
-}
-    .mari {
-        max-height: 50%;
-        max-width: 50%;
-        border-radius: 60px 60px 10px 10px;
-        position: relative;
-        top: -100px;
-        left: -450px;
-        z-index: -1;
-        transform:scale(0.60);
-        -moz-transform:scale(0.60);
-        -webkit-transform:scale(0.60); 
-        font-size: 28px;  
-      }
+
+
 
